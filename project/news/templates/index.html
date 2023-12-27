@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} All news {% endblock %}
+{% block content %}
+    <div class="posts-wrapper">
+        {% for post in news %}
+
+        <div class="post">
+            <p class="post-title">{{ post.title }}</p>
+            <p class="post-content">{{ post.content }}</p>
+            <div class="post-container">
+                <div class="post-info-wrapper">
+                    <p class="post-author">Author:
+                        <a href="/news/author/{{ post.author.id }}">{{ post.author }}</a>
+                    </p>
+                    <p class="post-date">{{ post.create_date }}</p>
+                </div>
+                <div class="post-buttons-wrapper">
+                    <a href="/news/edit/{{ post.id }}">Edit post</a>
+                    <a href="/news/delete/{{ post.id }}">Delete post</a>
+                </div>
+            </div>
+            
+        </div>
+
+        {% endfor %}
+    </div>
+{% endblock %}

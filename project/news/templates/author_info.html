@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{ author.name }} info {% endblock %}
+{% block content %}
+
+<div class="author-info-wrapper">
+    <p class="author-name">{{ author.name }}</p>
+    <p>Publishers:</p>
+    <ul>
+        {% for publisher in publishers %}
+        <li>{{ publisher.name }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}

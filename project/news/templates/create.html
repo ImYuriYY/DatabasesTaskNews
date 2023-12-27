@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Add new post {% endblock %}
+{% block content %}
+
+
+<form method="post" class="add-post-form">
+    {% csrf_token %}
+    {{ form }}
+
+    <button class="add-post-button">Add post</button>
+</form>
+
+
+{% endblock %}
